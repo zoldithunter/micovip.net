@@ -411,12 +411,12 @@ export default {
     // },
     invoice() {
       if (this.nimoID === null || this.nimoID.trim() === '') {
-        window.alert("Chưa nhập nimoID")
+        window.alert("Chưa nhập ID")
         return;
       }
       if (this.money === null || this.kc === null) {
         if (this.chooseMoney === null) {
-          window.alert("Chưa chọn mệnh giá KC")
+          window.alert("Chưa chọn mệnh giá XU")
           return;
         }
         this.money = this.listPrice[this.chooseMoney - 1].price;
