@@ -13,47 +13,34 @@
             <b-carousel-slide
                 :img-src="carousel1"
             ></b-carousel-slide>
-
-            <b-carousel-slide
-                :img-src="carousel2"
-            ></b-carousel-slide>
-
-            <b-carousel-slide
-                :img-src="carousel3"
-            >
-            </b-carousel-slide>
-
-            <b-carousel-slide
-                :img-src="carousel4"
-            ></b-carousel-slide>
           </b-carousel>
         </b-col>
       </b-row>
 
-      <b-row>
-        <b-col>
-          <b-navbar toggleable="lg" type="light" style="background-color: deepskyblue">
-            <b-navbar-nav style="width: 100%">
-              <b-nav-item
-                  v-b-hover="hoverDashboard"
-                  style="font-weight: bolder; border: 1px solid rgba(255, 0, 0, .2); border-radius: 10px"
-                  target="_blank" href="https://nimovip.com/dashboard">
-                <b-icon-dice6 v-if="isHoverDashboard" animation="spin"/>
-                <b-icon-dice6 v-else/>
-                BẢNG CẦU
-              </b-nav-item>
-              <b-nav-item
-                  v-b-hover="hoverRegister"
-                  style="font-weight: bolder; border: 1px solid rgba(255, 0, 0, .2); border-radius: 10px; margin-left: 3px"
-                  target="_blank" href="https://nimovip.com/register">
-                <b-icon-pen v-if="isHoverRegister" animation="cylon-vertical"/>
-                <b-icon-pen v-else/>
-                ĐĂNG KÝ
-              </b-nav-item>
-            </b-navbar-nav>
-          </b-navbar>
-        </b-col>
-      </b-row>
+<!--      <b-row>-->
+<!--        <b-col>-->
+<!--          <b-navbar toggleable="lg" type="light" style="background-color: deepskyblue">-->
+<!--            <b-navbar-nav style="width: 100%">-->
+<!--              <b-nav-item-->
+<!--                  v-b-hover="hoverDashboard"-->
+<!--                  style="font-weight: bolder; border: 1px solid rgba(255, 0, 0, .2); border-radius: 10px"-->
+<!--                  target="_blank" href="https://nimovip.com/dashboard">-->
+<!--                <b-icon-dice6 v-if="isHoverDashboard" animation="spin"/>-->
+<!--                <b-icon-dice6 v-else/>-->
+<!--                BẢNG CẦU-->
+<!--              </b-nav-item>-->
+<!--              <b-nav-item-->
+<!--                  v-b-hover="hoverRegister"-->
+<!--                  style="font-weight: bolder; border: 1px solid rgba(255, 0, 0, .2); border-radius: 10px; margin-left: 3px"-->
+<!--                  target="_blank" href="https://nimovip.com/register">-->
+<!--                <b-icon-pen v-if="isHoverRegister" animation="cylon-vertical"/>-->
+<!--                <b-icon-pen v-else/>-->
+<!--                ĐĂNG KÝ-->
+<!--              </b-nav-item>-->
+<!--            </b-navbar-nav>-->
+<!--          </b-navbar>-->
+<!--        </b-col>-->
+<!--      </b-row>-->
 
       <b-row v-if="isOutOfStock">
         <b-col>
@@ -71,7 +58,7 @@
             <b-row v-if="payment === false" style="margin-top: 20px">
               <b-col>
                 <b-card
-                    header="DANH SÁCH GIÁ KIM CƯƠNG"
+                    header="DANH SÁCH GIÁ XU"
                     class="text-left"
                 >
                   <b-container>
@@ -83,7 +70,7 @@
                             <b-icon icon="credit-card2-front"></b-icon>
                           </b-input-group-prepend>
                           <b-form-input v-model="nimoID" type="text"
-                                        placeholder="Điền số ID NIMO bạn muốn nạp"></b-form-input>
+                                        placeholder="Điền số ID MICO bạn muốn nạp"></b-form-input>
                         </b-input-group>
                       </b-col>
                     </b-row>
@@ -142,7 +129,7 @@
                       <b-col cols="12" sm="6">
                         <b-container>
                           <b-row>
-                            <b-col cols="7">Số lượng Kim Cương cần nạp:</b-col>
+                            <b-col cols="7">Số lượng Xu cần nạp:</b-col>
                             <b-col v-if="kc > 0" class="text-kc">{{ kc | toCurrency }}
                             </b-col>
                             <b-col v-else class="text-kc">Liên hệ</b-col>
@@ -157,7 +144,7 @@
                             <b-col cols="7">Nội dung chuyển khoản:</b-col>
                           </b-row>
                           <b-row>
-                            <b-col class="text-right" style="font-weight: bolder">{{
+                            <b-col class="text-right" style="font-weight: bolder">MICO [dấu_cách] {{
                                 nimoID
                               }} [dấu_cách]
                               {{ kc }}
@@ -165,40 +152,40 @@
                           </b-row>
                         </b-container>
                       </b-col>
-                      <b-col style="border-left: 1px solid rgba(255, 0, 0, .2)">
-                        Hướng dẫn giao dịch:
-                        <b-row class="row-step">
-                          <b-col>
-                            <b-icon-check-circle style="color: #007bff"/>
-                            Bước 1: Bấm đăng nhập cho ID cần nạp
-                          </b-col>
-                        </b-row>
-                        <b-row class="row-step">
-                          <b-col>
-                            <b-icon-check-circle style="color: #007bff"/>
-                            Bước 2: Mục combo tuỳ chỉnh: Nhập số KC cần nạp
-                          </b-col>
-                        </b-row>
-                        <b-row class="row-step">
-                          <b-col>
-                            <b-icon-check-circle style="color: #007bff"/>
-                            Bước 3: Bấm tậu
-                          </b-col>
-                        </b-row>
-                        <b-row class="row-step">
-                          <b-col>
-                            <b-icon-check-circle style="color: #007bff"/>
-                            Bước 4: Chọn đại lý "<span
-                              style="color: #007bff;font-weight: bolder;">FAIRIES</span>"
-                          </b-col>
-                        </b-row>
-                        <b-row class="row-step">
-                          <b-col style="font-weight: bolder">
-                            <b-icon-arrow-return-right style="color: #007bff"/>
-                            CHỤP LẠI MÀN HÌNH
-                          </b-col>
-                        </b-row>
-                      </b-col>
+<!--                      <b-col style="border-left: 1px solid rgba(255, 0, 0, .2)">-->
+<!--                        Hướng dẫn giao dịch:-->
+<!--                        <b-row class="row-step">-->
+<!--                          <b-col>-->
+<!--                            <b-icon-check-circle style="color: #007bff"/>-->
+<!--                            Bước 1: Bấm đăng nhập cho ID cần nạp-->
+<!--                          </b-col>-->
+<!--                        </b-row>-->
+<!--                        <b-row class="row-step">-->
+<!--                          <b-col>-->
+<!--                            <b-icon-check-circle style="color: #007bff"/>-->
+<!--                            Bước 2: Mục combo tuỳ chỉnh: Nhập số KC cần nạp-->
+<!--                          </b-col>-->
+<!--                        </b-row>-->
+<!--                        <b-row class="row-step">-->
+<!--                          <b-col>-->
+<!--                            <b-icon-check-circle style="color: #007bff"/>-->
+<!--                            Bước 3: Bấm tậu-->
+<!--                          </b-col>-->
+<!--                        </b-row>-->
+<!--                        <b-row class="row-step">-->
+<!--                          <b-col>-->
+<!--                            <b-icon-check-circle style="color: #007bff"/>-->
+<!--                            Bước 4: Chọn đại lý "<span-->
+<!--                              style="color: #007bff;font-weight: bolder;">FAIRIES</span>"-->
+<!--                          </b-col>-->
+<!--                        </b-row>-->
+<!--                        <b-row class="row-step">-->
+<!--                          <b-col style="font-weight: bolder">-->
+<!--                            <b-icon-arrow-return-right style="color: #007bff"/>-->
+<!--                            CHỤP LẠI MÀN HÌNH-->
+<!--                          </b-col>-->
+<!--                        </b-row>-->
+<!--                      </b-col>-->
                     </b-row>
                     <b-row style="margin-top: 20px">
                       <b-col>
@@ -209,9 +196,9 @@
                       </b-col>
                       <b-col class="text-right">
                         <b-button target="_blank"
-                                  href="https://www.nimo.tv/recharge/currency-trading/place-order?_lang=1066"
+                                  href="https://chat.zalo.me/?phone=0383341246"
                                   variant="success">
-                          ĐI TỚI TẬU KC
+                          CHUYỂN BILL QUA INBOX
                           <b-icon-check2-circle/>
                         </b-button>
                       </b-col>
@@ -271,8 +258,8 @@
                                     <b-img
                                         style="display: inline; width: 20px; height: 20px"
                                         :src="fb"/>
-                                    <b-link href="https://fb.com/linhvd.9x">
-                                      https://fb.com/linhvd.9x
+                                    <b-link href="https://fb.com/lynnbaby123">
+                                      https://fb.com/lynnbaby123
                                     </b-link>
                                   </b-col>
                                 </b-row>
@@ -352,9 +339,6 @@ import avatar1 from "./assets/avatar1.jpg";
 import avatar2 from "./assets/avatar2.jpg";
 import bank from "./assets/bank.png";
 import carousel1 from "./assets/carousel1.png";
-import carousel2 from "./assets/carousel2.png";
-import carousel3 from "./assets/carousel3.png";
-import carousel4 from "./assets/carousel4.png";
 import fb from "./assets/fb.png";
 import momo from "./assets/momo.jpeg";
 import profile from "./assets/profile.png";
@@ -370,9 +354,6 @@ export default {
       avatar2: avatar2,
       bank: bank,
       carousel1: carousel1,
-      carousel2: carousel2,
-      carousel3: carousel3,
-      carousel4: carousel4,
       fb: fb,
       momo: momo,
       profile: profile,
@@ -384,13 +365,13 @@ export default {
       chooseMoney: null,
       numberColPerRow: 6,
       listPrice: [
-        {index: 1, price: 500000, coin: 2125},
-        {index: 2, price: 1000000, coin: 4300},
-        {index: 3, price: 2000000, coin: 8600},
-        {index: 4, price: 5000000, coin: 21500},
-        {index: 5, price: 10000000, coin: 43450},
-        {index: 6, price: 20000000, coin: 86900},
-        {index: 7, price: 50000000, coin: 217000},
+        {index: 1, price: 100000, coin: 535},
+        {index: 2, price: 200000, coin: 1080},
+        {index: 3, price: 500000, coin: 2750},
+        {index: 4, price: 1000000, coin: 5550},
+        {index: 5, price: 10000000, coin: 56000},
+        {index: 6, price: 20000000, coin: 112000},
+        {index: 7, price: 50000000, coin: 0},
         {index: 8, price: 100000000, coin: 0},
       ],
       tmp_money: null,
@@ -412,12 +393,15 @@ export default {
       if (this.tmp_money !== null && this.tmp_money.trim() !== '' && !isNaN(this.tmp_money)) {
         this.money = parseInt(this.tmp_money);
         this.chooseMoney = null
-        if (this.money < 2001000) {
-          this.kc = Math.ceil(this.money / 235)
-        } else if (this.money < 5001000) {
-          this.kc = Math.ceil(this.money / 232)
+
+        if (this.money < 1000000) {
+          this.kc = Math.ceil(this.money / 185)
+        } else if (this.money < 5000000) {
+          this.kc = Math.ceil(this.money / 182)
+        } else if (this.money < 20000000) {
+          this.kc = Math.ceil(this.money / 180)
         } else {
-          this.kc = Math.ceil(this.money / 230)
+          this.kc = Math.ceil(this.money / 178)
         }
       }
     },
