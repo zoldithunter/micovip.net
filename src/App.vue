@@ -394,7 +394,7 @@ export default {
         this.money = parseInt(this.tmp_money);
         this.chooseMoney = null
 
-        if (this.money < 1000000) {
+        if (this.money < 500000) {
           this.kc = Math.ceil(this.money / 185)
         } else if (this.money < 5000000) {
           this.kc = Math.ceil(this.money / 182)
