@@ -368,7 +368,7 @@ export default {
         {index: 1, price: 100000, coin: 535},
         {index: 2, price: 200000, coin: 1080},
         {index: 3, price: 500000, coin: 2750},
-        {index: 4, price: 1000000, coin: 5550},
+        {index: 4, price: 1000000, coin: 5500},
         {index: 5, price: 10000000, coin: 56000},
         {index: 6, price: 20000000, coin: 112000},
         {index: 7, price: 50000000, coin: 0},
