@@ -290,7 +290,7 @@
                                     <b-img
                                         style="display: inline; width: 20px; height: 20px"
                                         :src="bank"/>
-                                    345286628 - MB Ngân hàng Quân đội
+                                    6688199999 - Vietcombank
                                   </b-col>
                                 </b-row>
                                 <b-row class="row-info">
@@ -365,14 +365,19 @@ export default {
       chooseMoney: null,
       numberColPerRow: 6,
       listPrice: [
-        {index: 1, price: 100000, coin: 535},
-        {index: 2, price: 200000, coin: 1080},
-        {index: 3, price: 500000, coin: 2750},
-        {index: 4, price: 1000000, coin: 5500},
-        {index: 5, price: 10000000, coin: 56000},
-        {index: 6, price: 20000000, coin: 112000},
-        {index: 7, price: 50000000, coin: 0},
-        {index: 8, price: 100000000, coin: 0},
+        {index: 1, price: 100000, coin: 510},
+        {index: 2, price: 200000, coin: 1040},
+        {index: 3, price: 300000, coin: 1550},
+        {index: 4, price: 500000, coin: 2600},
+        {index: 5, price: 1000000, coin: 5200},
+        {index: 6, price: 2000000, coin: 10400},
+        {index: 7, price: 3000000, coin: 15630},
+        {index: 8, price: 5000000, coin: 26000},
+        {index: 9, price: 10000000, coin: 52100},
+        {index: 10, price: 15000000, coin: 78150},
+        {index: 11, price: 20000000, coin: 106000},
+        {index: 12, price: 50000000, coin: 265000},
+        {index: 13, price: 100000000, coin: 530000},
       ],
       tmp_money: null,
       money: null,
@@ -393,15 +398,14 @@ export default {
       if (this.tmp_money !== null && this.tmp_money.trim() !== '' && !isNaN(this.tmp_money)) {
         this.money = parseInt(this.tmp_money);
         this.chooseMoney = null
-
-        if (this.money < 500000) {
+        if (this.money <= 200000) {
+          this.kc = Math.ceil(this.money / 190)
+        } else if (this.money <= 999999) {
+          this.kc = Math.ceil(this.money / 187)
+        } else if (this.money <= 4999999) {
           this.kc = Math.ceil(this.money / 185)
-        } else if (this.money < 5000000) {
-          this.kc = Math.ceil(this.money / 182)
-        } else if (this.money < 20000000) {
-          this.kc = Math.ceil(this.money / 180)
         } else {
-          this.kc = Math.ceil(this.money / 178)
+          this.kc = Math.ceil(this.money / 183)
         }
       }
     },
