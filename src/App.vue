@@ -283,6 +283,7 @@
                                         style="display: inline; width: 20px; height: 20px"
                                         :src="profile"/>
                                     Admin Hồ Anh Thư
+<!--                                    Nguyễn Duy Tùng-->
                                   </b-col>
                                 </b-row>
                                 <b-row class="row-info">
@@ -290,6 +291,7 @@
                                     <b-img
                                         style="display: inline; width: 20px; height: 20px"
                                         :src="bank"/>
+<!--                                    2720108899999 MB bank-->
                                     6688199999 - Vietcombank
                                   </b-col>
                                 </b-row>
@@ -302,7 +304,8 @@
                                     <b-img
                                         style="display: inline; width: 20px; height: 20px"
                                         :src="zalo"/>
-                                    0345286628
+                                    0822.888.222
+<!--                                    0965973222-->
                                   </b-col>
                                 </b-row>
                                 <b-row class="row-info">
@@ -313,6 +316,9 @@
                                     <b-link href="https://fb.com/anthu158">
                                       https://fb.com/anthu158
                                     </b-link>
+<!--                                    <b-link href="https://www.facebook.com/profile.php?id=100076318307504">-->
+<!--                                      https://www.facebook.com/profile.php?id=100076318307504-->
+<!--                                    </b-link>-->
                                   </b-col>
                                 </b-row>
                               </b-container>
@@ -365,19 +371,19 @@ export default {
       chooseMoney: null,
       numberColPerRow: 6,
       listPrice: [
-        {index: 1, price: 100000, coin: 525},
-        {index: 2, price: 200000, coin: 1050},
-        {index: 3, price: 300000, coin: 1600},
-        {index: 4, price: 500000, coin: 2700},
-        {index: 5, price: 1000000, coin: 5400},
-        {index: 6, price: 2000000, coin: 10800},
-        {index: 7, price: 3000000, coin: 16200},
-        {index: 8, price: 5000000, coin: 27300},
-        {index: 9, price: 10000000, coin: 54640},
-        {index: 10, price: 15000000, coin: 81950},
-        {index: 11, price: 20000000, coin: 109200},
-        {index: 12, price: 50000000, coin: 273200},
-        {index: 13, price: 100000000, coin: 546400},
+        {index: 1, price: 100000, coin: 500},
+        {index: 2, price: 200000, coin: 1000},
+        {index: 3, price: 300000, coin: 1515},
+        {index: 4, price: 500000, coin: 2525},
+        {index: 5, price: 1000000, coin: 5100},
+        {index: 6, price: 2000000, coin: 10200},
+        {index: 7, price: 3000000, coin: 15300},
+        {index: 8, price: 5000000, coin: 25650},
+        {index: 9, price: 10000000, coin: 51300},
+        {index: 10, price: 15000000, coin: 76930},
+        {index: 11, price: 20000000, coin: 102570},
+        {index: 12, price: 50000000, coin: 256420},
+        {index: 13, price: 100000000, coin: 512900},
       ],
       tmp_money: null,
       money: null,
@@ -399,13 +405,13 @@ export default {
         this.money = parseInt(this.tmp_money);
         this.chooseMoney = null
         if (this.money <= 200000) {
-          this.kc = Math.ceil(this.money / 190)
+          this.kc = Math.ceil(this.money / 200)
         } else if (this.money <= 999999) {
-          this.kc = Math.ceil(this.money / 187)
+          this.kc = Math.ceil(this.money / 198)
         } else if (this.money <= 4999999) {
-          this.kc = Math.ceil(this.money / 185)
+          this.kc = Math.ceil(this.money / 196)
         } else {
-          this.kc = Math.ceil(this.money / 183)
+          this.kc = Math.ceil(this.money / 195)
         }
       }
     },
