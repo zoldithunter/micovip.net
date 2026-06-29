@@ -373,17 +373,17 @@ export default {
       listPrice: [
         {index: 1, price: 100000, coin: 500},
         {index: 2, price: 200000, coin: 1000},
-        {index: 3, price: 300000, coin: 1515},
-        {index: 4, price: 500000, coin: 2525},
-        {index: 5, price: 1000000, coin: 5100},
-        {index: 6, price: 2000000, coin: 10200},
-        {index: 7, price: 3000000, coin: 15300},
-        {index: 8, price: 5000000, coin: 25650},
-        {index: 9, price: 10000000, coin: 51300},
-        {index: 10, price: 15000000, coin: 76930},
-        {index: 11, price: 20000000, coin: 102570},
-        {index: 12, price: 50000000, coin: 256420},
-        {index: 13, price: 100000000, coin: 512900},
+        {index: 3, price: 300000, coin: 1500},
+        {index: 4, price: 500000, coin: 2500},
+        {index: 5, price: 1000000, coin: 5000},
+        {index: 6, price: 2000000, coin: 10000},
+        {index: 7, price: 3000000, coin: 15000},
+        {index: 8, price: 5000000, coin: 25000},
+        {index: 9, price: 10000000, coin: 50000},
+        {index: 10, price: 15000000, coin: 75000},
+        {index: 11, price: 20000000, coin: 100000},
+        {index: 12, price: 50000000, coin: 250000},
+        {index: 13, price: 100000000, coin: 500000},
       ],
       tmp_money: null,
       money: null,
@@ -407,11 +407,11 @@ export default {
         if (this.money <= 200000) {
           this.kc = Math.ceil(this.money / 200)
         } else if (this.money <= 999999) {
-          this.kc = Math.ceil(this.money / 198)
+          this.kc = Math.ceil(this.money / 200)
         } else if (this.money <= 4999999) {
-          this.kc = Math.ceil(this.money / 196)
+          this.kc = Math.ceil(this.money / 200)
         } else {
-          this.kc = Math.ceil(this.money / 195)
+          this.kc = Math.ceil(this.money / 200)
         }
       }
     },
